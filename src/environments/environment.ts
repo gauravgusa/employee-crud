@@ -6,10 +6,10 @@ export const environment = {
   production: false,
   firebaseConfig: {
     apiKey: '',
-    authDomain: '',
+    authDomain: 'e-crud.firebaseapp.com',
     databaseURL: '',
     projectId: 'e-crud',
-    storageBucket: '',
+    storageBucket: 'e-crud.appspot.com',
     messagingSenderId: '',
     appId: '',
   },

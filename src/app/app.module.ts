@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 //import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -20,15 +20,22 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { EmployeeService } from './shared/employee.service';
 import { DepartmentService } from './shared/department.service';
+import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 
 @NgModule({
-  declarations: [AppComponent, EmployeesComponent, EmployeeComponent],
+  declarations: [
+    AppComponent,
+    EmployeesComponent,
+    EmployeeComponent,
+    EmployeeListComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
+    FormsModule,
     //provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     //provideFirestore(() => getFirestore()),

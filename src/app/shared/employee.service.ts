@@ -47,7 +47,7 @@ export class EmployeeService {
 
   getEmployees() {
     this.employeeListRef = this.db.list('employees');
-    return this.employeeRef;
+    return this.employeeListRef.snapshotChanges();
   }
 
   getEmployee($key: string) {

@@ -5,6 +5,8 @@ import {
   AngularFireObject,
 } from '@angular/fire/compat/database';
 
+import * as _ from 'lodash';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -24,5 +26,14 @@ export class DepartmentService {
         };
       });
     });
+  }
+
+  getDepartmentName($key) {
+    if ($key == '0') return '';
+    else {
+      return _.find(this.array, (obj) => {
+        return obj.$key == $key;
+      })['name'];
+    }
   }
 }
