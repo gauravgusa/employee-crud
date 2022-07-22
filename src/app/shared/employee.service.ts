@@ -9,6 +9,7 @@ import {
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { EmployeeList } from '../models/employee-list.model';
+import * as _ from 'lodash';
 
 @Injectable({
   providedIn: 'root',
@@ -63,7 +64,7 @@ export class EmployeeService {
       city: employee.city,
       gender: employee.gender,
       department: employee.department,
-      hireDate: employee.hireDate,
+      hireDate: employee.hireDate.toString(),
       isPermanent: employee.isPermanent,
     });
   }
@@ -76,9 +77,14 @@ export class EmployeeService {
       city: employee.city,
       gender: employee.gender,
       department: employee.department,
-      hireDate: employee.hireDate,
+      hireDate: employee.hireDate.toString(),
       isPermanent: employee.isPermanent,
     });
+  }
+
+  populateForm(employee) {
+    this.form.setValue(_.omit(employee, 'departmentName'));
+    this.form.patchValue({ hireDate: new Date(employee.hireDate) });
   }
 
   // Delete Student Object

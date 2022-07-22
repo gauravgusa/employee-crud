@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: '',
+    apiKey: 'blag9l0blaQo0',
     authDomain: 'e-crud.firebaseapp.com',
-    databaseURL: '',
+    databaseURL: 'https://blabla',
     projectId: 'e-crud',
     storageBucket: 'e-crud.appspot.com',
-    messagingSenderId: '',
-    appId: '',
+    messagingSenderId: '25baba',
+    appId: '1:25707',
   },
 };
 
